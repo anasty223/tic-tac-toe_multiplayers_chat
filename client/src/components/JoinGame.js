@@ -28,7 +28,7 @@ const createChannel = async () => {
     {channel ? (
    
      <Channel channel={channel}>
-      <Game/>
+      <Game channel={channel}/>
       </Channel>
     ) : (
       <div className="joinGame">
