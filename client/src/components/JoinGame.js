@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {useChatContext, Channel} from "stream-chat-react";
 import Game from './Game';
 import {TextField,Button} from '@mui/material';
-
+import toast from 'react-hot-toast';
 function JoinGame() {
   const [rivalUserName, setRivalUserName] = useState("");
 const {client}= useChatContext();
@@ -12,7 +12,7 @@ const createChannel = async () => {
   const response = await client.queryUsers({ name: { $eq: rivalUserName } });
 
   if (response.users.length === 0) {
-    alert("User not found");
+    toast.error("User not found");
     return;
   }
 

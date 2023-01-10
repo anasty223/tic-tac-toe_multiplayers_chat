@@ -6,7 +6,8 @@ import {Chat} from "stream-chat-react"
 import Cookies from "universal-cookie";
 import { useState } from "react";
 import JoinGame from "./components/JoinGame";
-import {TextField,Button} from '@mui/material';
+import {Button} from '@mui/material';
+import  { Toaster } from 'react-hot-toast';
 
 function App() {
   const api_key = "duh9vykpu5fj";
@@ -50,7 +51,7 @@ const logOut=()=>{
       {isAuth ? (
       <Chat client={client}>
          <JoinGame/>
-       <Button variant="contained" onClick={logOut} style={{marginTop:10}}>Log Out</Button>
+       <Button variant="contained" onClick={logOut} style={{backgroundColor:"#034078",marginTop:10}}>Log Out</Button>
        </Chat>
       ) : (
         <>
@@ -58,6 +59,10 @@ const logOut=()=>{
           <Login setIsAuth={setIsAuth} />
         </>
       )}
+      <Toaster
+  position="top-right"
+  reverseOrder={false}
+/>
     </div>
   );
 }
