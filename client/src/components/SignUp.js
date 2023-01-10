@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Axios from "axios";
 import Cookies from "universal-cookie";
 import {TextField,Button,FormGroup } from '@mui/material';
+import toast,{Toaster} from 'react-hot-toast';
 
 function SignUp({setIsAuth}) {
   const cookies = new Cookies();
@@ -17,7 +18,13 @@ function SignUp({setIsAuth}) {
       cookies.set("firstName", firstName);
       cookies.set("lastName", lastName);
       cookies.set("hashedPassword", hashedPassword);
-     setIsAuth(true)
+if(user){
+  setIsAuth(true)
+}else{
+  toast.error("Enter data");
+}
+
+   
     });
   };
   return (
@@ -53,7 +60,13 @@ function SignUp({setIsAuth}) {
           setUser({ ...user, password: event.target.value });
         }}
       />
-      <Button style={{backgroundColor:"#001f54",marginTop:5}}  variant="contained" onClick={signUp}> Sign Up</Button></FormGroup >
+      <Button style={{backgroundColor:"#001f54",marginTop:5}}  variant="contained" onClick={signUp}> Sign Up</Button>
+      
+      </FormGroup >
+      <Toaster
+  position="top-left"
+  reverseOrder={false}
+/>
     </div>
   );
 }

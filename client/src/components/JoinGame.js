@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {useChatContext, Channel} from "stream-chat-react";
 import Game from './Game';
 import {TextField,Button} from '@mui/material';
-import toast from 'react-hot-toast';
+import toast,{Toaster} from 'react-hot-toast';
 function JoinGame() {
   const [rivalUserName, setRivalUserName] = useState("");
 const {client}= useChatContext();
@@ -52,6 +52,10 @@ style={{marginLeft:10,height:55}}
 
       </div>
     )}
+          <Toaster
+  position="top-right"
+  reverseOrder={false}
+/>
   </>
   )
 }

@@ -59,10 +59,7 @@ const logOut=()=>{
           <Login setIsAuth={setIsAuth} />
         </>
       )}
-      <Toaster
-  position="top-right"
-  reverseOrder={false}
-/>
+
     </div>
   );
 }
