@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {useChatContext, Channel} from "stream-chat-react";
 import Game from './Game';
-
+import {TextField,Button} from '@mui/material';
 
 function JoinGame() {
   const [rivalUserName, setRivalUserName] = useState("");
@@ -33,13 +33,23 @@ const createChannel = async () => {
     ) : (
       <div className="joinGame">
         <h4>Create Game</h4>
-        <input
-          placeholder="Username of rival..."
+        <TextField
+
+id="outlined-basic" label="Username of rival..." variant="outlined"
+          
           onChange={(event) => {
             setRivalUserName(event.target.value);
           }}
         />
-        <button onClick={createChannel}> Join/Start Game</button>
+     
+        <Button onClick={createChannel}   color="secondary"
+  size="large"
+className='buttonJoin'
+style={{marginLeft:10,height:55}}
+  variant="filled"> Join/Start Game</Button>
+
+
+
       </div>
     )}
   </>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import Cookies from "universal-cookie";
+import {TextField,Button,FormGroup } from '@mui/material';
 
 function Login({setIsAuth}) {
   const [username, setUsername] = useState("");
@@ -23,22 +24,25 @@ setIsAuth(true)
   };
   return (
     <div className="login">
-      <label> Login</label>
-
-      <input
-        placeholder="Username"
+ 
+<FormGroup style={{marginLeft:20,padding:20}}>
+      <TextField
+      id="outlined-basic" label="Username..." variant="outlined"
+      style={{marginTop:10}}
         onChange={(event) => {
           setUsername(event.target.value);
         }}
       />
-      <input
-        placeholder="Password"
+      <TextField
+       id="outlined-basic" label="Password..." variant="outlined"
         type="password"
+        style={{marginTop:10}}
         onChange={(event) => {
           setPassword(event.target.value);
         }}
       />
-      <button onClick={login}> Login</button>
+      <Button style={{backgroundColor:"#001f54",marginTop:5}} variant="contained" onClick={login}> Login</Button>
+      </FormGroup>
     </div>
   );
 }

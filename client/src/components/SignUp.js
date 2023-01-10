@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import Cookies from "universal-cookie";
+import {TextField,Button,FormGroup } from '@mui/material';
 
 function SignUp({setIsAuth}) {
   const cookies = new Cookies();
@@ -21,33 +22,38 @@ function SignUp({setIsAuth}) {
   };
   return (
     <div className="signUp">
-      <label> Sign Up</label>
-      <input
-        placeholder="First Name"
+
+     <FormGroup  style={{ borderRight:"3px  dashed #1282a2",padding:20}} >
+       <TextField 
+      id="outlined-basic" label="First Name..." variant="outlined"
+      style={{marginTop:10}}
         onChange={(event) => {
           setUser({ ...user, firstName: event.target.value });
         }}
       />
-      <input
-        placeholder="Last Name"
+      <TextField 
+      id="outlined-basic" label="Last Name..." variant="outlined"
+      style={{marginTop:10}}
         onChange={(event) => {
           setUser({ ...user, lastName: event.target.value });
         }}
       />
-      <input
-        placeholder="Username"
+      <TextField 
+      id="outlined-basic" label="Username..." variant="outlined"
+      style={{marginTop:10}}
         onChange={(event) => {
           setUser({ ...user, username: event.target.value });
         }}
       />
-      <input
-        placeholder="Password"
+      <TextField 
+           id="outlined-basic" label="Password..." variant="outlined"
+           style={{marginTop:10}}
         type="password"
         onChange={(event) => {
           setUser({ ...user, password: event.target.value });
         }}
       />
-      <button onClick={signUp}> Sign Up</button>
+      <Button style={{backgroundColor:"#001f54",marginTop:5}}  variant="contained" onClick={signUp}> Sign Up</Button></FormGroup >
     </div>
   );
 }

@@ -6,6 +6,7 @@ import {Chat} from "stream-chat-react"
 import Cookies from "universal-cookie";
 import { useState } from "react";
 import JoinGame from "./components/JoinGame";
+import {TextField,Button} from '@mui/material';
 
 function App() {
   const api_key = "duh9vykpu5fj";
@@ -49,7 +50,7 @@ const logOut=()=>{
       {isAuth ? (
       <Chat client={client}>
          <JoinGame/>
-       <button onClick={logOut}>Log Out</button>
+       <Button variant="contained" onClick={logOut} style={{marginTop:10}}>Log Out</Button>
        </Chat>
       ) : (
         <>
