@@ -22,6 +22,7 @@ function Login({setIsAuth}) {
       cookies.set("lastName", lastName);
       if(username,password){
         setIsAuth(true)
+        toast.success("Success");
       }else{
         toast.error("Enter data");
       }

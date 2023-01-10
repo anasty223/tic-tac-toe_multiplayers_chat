@@ -20,6 +20,7 @@ function SignUp({setIsAuth}) {
       cookies.set("hashedPassword", hashedPassword);
 if(user){
   setIsAuth(true)
+
 }else{
   toast.error("Enter data");
 }
