@@ -4,6 +4,7 @@ import Board from './Board'
 function Game({channel}) {
 const [playersJoin, setPlayersJoin] = useState(channel.state.watcher_count===2)
 
+const [result,setResult]=useState({winner:"none",state:"none"})
 channel.on("user.watching.start",(event)=>{
   setPlayersJoin(event.watcher_count===2)
 })
@@ -13,7 +14,7 @@ channel.on("user.watching.start",(event)=>{
   }
   return (
     <div className='gameContainer'>
-      <Board/>
+      <Board result={result} setResult={setResult}/>
       {/* Chat */}
       {/* Leave game button */}
       </div>
