@@ -3,6 +3,7 @@ import {useChatContext, Channel} from "stream-chat-react";
 import Game from './Game';
 import {TextField,Button} from '@mui/material';
 import toast,{Toaster} from 'react-hot-toast';
+import CustomInput  from "./CustomInput"
 function JoinGame() {
   const [rivalUserName, setRivalUserName] = useState("");
 const {client}= useChatContext();
@@ -27,8 +28,8 @@ const createChannel = async () => {
   return (  <>
     {channel ? (
    
-     <Channel channel={channel}>
-      <Game channel={channel}/>
+     <Channel channel={channel} Input={CustomInput}>
+      <Game channel={channel} setChannel={setChannel}/>
       </Channel>
     ) : (
       <div className="joinGame">

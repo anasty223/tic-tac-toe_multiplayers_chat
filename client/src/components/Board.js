@@ -48,7 +48,7 @@ Patterns.forEach((currPattern)=>{
    } 
   })
   if(foundWinningPattern){
-    toast.success(`Winner ${board[currPattern[0]]}`);
+    // toast.success(`Winner ${board[currPattern[0]]}`);
     setResult({winner:board[currPattern[0]],state:"Won"})
   }
 })
@@ -63,7 +63,7 @@ const checkIfTie=()=>{
     }
   })
   if(filled){
-    toast.success(`Game tied`);
+    // toast.success(`Game tied`);
     setResult({winner:"none",state:"tie"})
   }
 }
