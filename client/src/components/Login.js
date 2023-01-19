@@ -10,7 +10,7 @@ function Login({setIsAuth}) {
 
   const cookies = new Cookies();
   const login = () => {
-    Axios.post("https://servertictac.onrender.com/login", {
+    Axios.post("http://localhost:3001/login", {
       username,
       password,
     }).then((res) => {
