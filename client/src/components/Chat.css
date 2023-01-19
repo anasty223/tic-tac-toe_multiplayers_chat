@@ -17,6 +17,9 @@
     width: 300px;
     overflow: hidden;
     overflow-y: scroll;
+    
+    border: 2px solid black;
+    border-bottom: none;
   }
   
   .str-chat__list ul {
@@ -65,6 +68,9 @@
     background-color: lightgrey;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
+
+    border: 2px solid black;
+    border-top: none;
   }
   
   .str-chat__input-flat-wrapper {

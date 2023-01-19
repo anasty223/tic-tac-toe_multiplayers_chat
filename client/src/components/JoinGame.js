@@ -48,9 +48,6 @@ id="outlined-basic" label="Username of rival..." variant="outlined"
 className='buttonJoin'
 style={{marginLeft:10,height:55}}
   variant="filled"> Join/Start Game</Button>
-
-
-
       </div>
     )}
           <Toaster

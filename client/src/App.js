@@ -49,10 +49,12 @@ const logOut=()=>{
   return (
     <div className="App">
       {isAuth ? (
-      <Chat client={client}>
-         <JoinGame/>
-       <Button variant="contained" onClick={logOut} style={{backgroundColor:"#034078",marginTop:10}}>Log Out</Button>
-       </Chat>
+      <div className="containerChat">
+        <Chat client={client}>
+          <div className="container">
+      <JoinGame/>
+    <Button  className="btnLogOut" variant="contained" onClick={logOut} style={{backgroundColor:"#034078",margin:25}}>Log Out</Button></div>
+    </Chat></div>
       ) : (
         <>
           <SignUp setIsAuth={setIsAuth} />
