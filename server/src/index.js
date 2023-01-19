@@ -14,7 +14,7 @@ const serverClient = StreamChat.getInstance(api_key, api_secret);
 
 app.post("/signup", async (req, res) => {
   res.header("Access-Control-Allow-Origin", "http://localhost:3001"); // restrict it to the required domain
-  res.header("Access-Control-Allow-Methods", "PUT");
+  res.header("Access-Control-Allow-Methods", 'GET','POST','DELETE','UPDATE','PUT','PATCH');
   res.header("Access-Control-Allow-Headers", "Content-type,Accept");
   if (req.method === "OPTIONS") {
         return res.status(200).end();
@@ -32,7 +32,7 @@ app.post("/signup", async (req, res) => {
 
 app.post("/login", async (req, res) => {
   res.header("Access-Control-Allow-Origin", "http://localhost:3001"); // restrict it to the required domain
-  res.header("Access-Control-Allow-Methods", "PUT");
+  res.header("Access-Control-Allow-Methods", 'GET','POST','DELETE','UPDATE','PUT','PATCH');
   res.header("Access-Control-Allow-Headers", "Content-type,Accept");
   if (req.method === "OPTIONS") {
         return res.status(200).end();
