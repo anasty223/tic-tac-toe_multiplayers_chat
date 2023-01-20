@@ -14,8 +14,8 @@
     "react-dom": "^17.0.2",
     "react-hot-toast": "^2.4.0",
     "react-scripts": "5.0.0",
-    "stream-chat": "^6.1.0",
-    "stream-chat-react": "^7.0.0",
+    "stream-chat": "^8.3.0",
+    "stream-chat-react": "^10.5.0",
     "universal-cookie": "^4.0.4",
     "web-vitals": "^2.1.0"
   },
